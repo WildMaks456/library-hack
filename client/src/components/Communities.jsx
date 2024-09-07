@@ -23,9 +23,6 @@ export default function Communities() {
 						</ul>
 					</div>
 					<div className='communities-nav-right-div'>
-						<div className="communities-nav-right-div-right">
-							<button className='communities-nav-right-div-btn'>Создать новое</button>
-						</div>
 						{location.pathname === '/communities' && <Navigate to="/communities/main" replace />}
 						<Outlet />
 					</div>
