@@ -234,7 +234,6 @@ code {
   flex: 0 0 auto;
   scroll-snap-align: start;
   margin-right: 15px;
-  /* Optional: add space between cards */
   width: 150px;
 }
 
