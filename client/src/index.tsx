@@ -18,6 +18,7 @@ import CommunitiesBooksSwap from './components/CommunitiesBooksSwap';
 import CommunitiesFavorities from './components/CommunitiesFavorities';
 import { Thread } from './components/Thread';
 import CommunitiesMain from './components/CommunitiesMain';
+import Library from './components/Library';
 
 
 const router = createBrowserRouter([
@@ -49,22 +50,10 @@ const router = createBrowserRouter([
     ],
 		errorElement: <ErrorPage />,
   },
-	// {
-  //   path: "/communities/main",
-  //   element: <CommunitiesMain />,
-  // },
-	// {
-  //   path: "/communities/books-swap",
-  //   element: <CommunitiesBooksSwap />,
-  // },
-	// {
-  //   path: "/communities/favorities",
-  //   element: <CommunitiesFavorities />,
-  // },
-	// {
-  //   path: "contacts/:contactId",
-  //   element: <App />,
-  // },
+	{
+    path: "/library",
+    element: <Library />,
+  },
 ]);
 
 
