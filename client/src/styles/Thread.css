@@ -8,6 +8,12 @@
 		border-radius: 10px;
 }
 
+.threads {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+
 .thread-info {
     display: flex;
     align-items: center;

@@ -59,8 +59,9 @@ export const Thread = () => {
     }, []);
 
     return (
-        <div className="thread">
+        <div className="threads">
             {posts.map((post) => (
+							<div className="thread">
                 <div key={post.id} className="thread-item">
                     <div className="thread-info">
                         <div className="thread-author">{post.author}</div>
@@ -87,7 +88,8 @@ export const Thread = () => {
 										</div>
 
 									</div>
-                </div>
+               	  </div>
+								</div>
             ))}
         </div>
     );
