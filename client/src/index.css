@@ -13,6 +13,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.wrapper {
+  width: 80%;
+  margin: auto;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -67,6 +72,27 @@ code {
 
 .logo_nav {
   display: flex;
-  gap:50px;
+  gap: 50px;
   align-items: center;
+}
+
+
+
+.content {
+  max-width: 300px;
+}
+
+.toc {
+  list-style-type: none;
+  padding: 0;
+}
+
+.toc li {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dots {
+  flex-grow: 1;
+  border-bottom: 1.5px dotted black;
 }
