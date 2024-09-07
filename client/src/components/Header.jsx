@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import logo from '../assets/logo.png'
 
 export default function Header() {
@@ -7,13 +7,13 @@ export default function Header() {
         <header className='header'>
             <div className="header-container">
                 <div className="logo_nav">
-                    <div className="logo">
+                    <NavLink to={"/"} className="logo">
                         <img src={logo} alt="Logo" />
                         <h1>ОУНБ</h1>
-                    </div>
+                    </NavLink>
                     <nav className='nav'>
                         <ul>
-                            <li><NavLink to={"/main"}>Главное</NavLink></li>
+                            <li><NavLink to={"/"}>Главное</NavLink></li>
                             <li><NavLink to={"/quests"}>Квесты</NavLink></li>
                             <li><NavLink to={"/communities"}>Сообщества</NavLink></li>
                             <li><NavLink to={"/mybooks"}>Мои книги</NavLink></li>

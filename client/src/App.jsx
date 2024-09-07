@@ -11,8 +11,8 @@ function App() {
       <Header />
       <div className='wrapper'>
         <Content />
-        <Footer />
       </div>
+      <Footer />
     </div>
   );
 }
