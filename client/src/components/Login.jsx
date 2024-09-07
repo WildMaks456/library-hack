@@ -16,7 +16,7 @@ export default function Login() {
 
   const initialValues = {
     email: '',
-    password: '',
+    password: ''
   };
 
   const handleLogin = async () => {
