@@ -25,9 +25,7 @@ function App() {
         <br />
         <br />
         <h1>Добро пожаловать!</h1>
-        <NavLink to="/account">
-          <button>Вход</button>
-        </NavLink>
+        
 
       </div>
     </div>

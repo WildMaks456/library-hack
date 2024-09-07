@@ -24,3 +24,26 @@
     display: flex;
     gap: 12px;
 }
+
+
+.thread-likes {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.thread-dislikes {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.thread-star {
+    display: flex;
+    align-items: center;
+}
+
+.thread-comments {
+    display: flex;
+    align-items: center;
+}
