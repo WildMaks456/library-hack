@@ -2,6 +2,7 @@ import "../styles/Thread.css"
 import imgLike from '../assets/Group.png'
 import imgDisLike from '../assets/Dislike.png'
 import imgStar from '../assets/star.png'
+import imgComments from '../assets/Comments.png'
 
 export const Thread = () => {
     return (
@@ -28,6 +29,9 @@ export const Thread = () => {
                     <img src={imgStar} alt=""/>
                 </div>
 
+                <div className="thread-comments">
+                    <img src={imgComments} alt=""/>
+                </div>
 
             </div>
         </div>
