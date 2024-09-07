@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import BookItem from './BookItem';
 
 export default function Content() {
     const [books, setBooks] = useState([
@@ -316,11 +317,7 @@ export default function Content() {
                         <button className="arrow arrow-left" onClick={() => { scrollLeft('.popular-cards') }}>←</button>
                         <div className="popular-cards">
                             {books.map((book, index) => (
-                                <div className="popular-card" key={index}>
-                                    <img src={book.imgUrl} alt="" />
-                                    <h4>{book.author}</h4>
-                                    <p>{book.title}</p>
-                                </div>
+                                <BookItem book={book} key={index} />
                             ))}
                         </div>
                         <button className="arrow arrow-right" onClick={() => { scrollRight('.popular-cards') }}>→</button>
@@ -331,11 +328,7 @@ export default function Content() {
                         <button className="arrow arrow-left" onClick={() => { scrollLeft('.authors-cards') }}>←</button>
                         <div className="authors-cards">
                             {topAuthors.map((book, index) => (
-                                <div className="popular-card" key={index}>
-                                    <img src={book.imgUrl} alt="" />
-                                    <h4>{book.author}</h4>
-                                    <p>{book.title}</p>
-                                </div>
+                                <BookItem book={book} key={index} />
                             ))}
                         </div>
                         <button className="arrow arrow-right" onClick={() => { scrollRight('.authors-cards') }}>→</button>
