@@ -5,8 +5,6 @@ import * as yup from "yup";
 import {Form, Formik, useField} from "formik";
 
 export default function Login() {
-	const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
   const validationSchema = yup.object().shape({
@@ -19,12 +17,11 @@ export default function Login() {
     password: ''
   };
 
-  const handleLogin = async () => {
+  const handleLogin = async (values, { setSubmitting}) => {
     try {
-      const response = await axios.post('http://localhost:5000/auth/login', {
-        email,
-        password
-      });
+			console.log(values);
+      const response = await axios.post('http://localhost:5000/auth/login', values);
+			
       localStorage.setItem('token', response.data.token);
       navigate('/account');
     } catch (error) {
@@ -74,11 +71,11 @@ export default function Login() {
                         type="password"
                     />
                   </div>
+      						<button type="submit">Войти</button>
                 </div>
               </Form>
             </>)}
       </Formik>
-      <button type="submit">Войти</button>
     </div>
   );
 }

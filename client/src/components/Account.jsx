@@ -21,12 +21,11 @@ export default function Account() {
 
 
       <h2>Личный кабинет...</h2>
-        <Profile/>
-
-        {/*{isValidToken ? "" : <>*/}
-        {/*    <p>У вас уже есть аккаунт? <NavLink to="/login">Аккаунт</NavLink> или хотите <NavLink to="/register">зарегаться</NavLink>?</p>*/}
-        {/*</>*/}
-        {/*}*/}
+        
+        {isValidToken ? <Profile/> : <>
+           <p>У вас уже есть аккаунт? <NavLink to="/login">Аккаунт</NavLink> или хотите <NavLink to="/register">зарегаться</NavLink>?</p>
+        </>
+        }
     </div>
   );
 }

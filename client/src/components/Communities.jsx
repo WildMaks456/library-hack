@@ -19,7 +19,8 @@ export default function Communities() {
 								<Link className='communities-nav-left-link' to="/communities/main"><li className={`communities-nav-left-li ${location.pathname === '/communities/main' ? 'active' : ''}`}>Сообщество</li></Link>
 								<Link className='communities-nav-left-link' to="/communities/books-swap"><li className={`communities-nav-left-li ${location.pathname === '/communities/books-swap' ? 'active' : ''}`}>Обмен книгами</li></Link>
 								<Link className='communities-nav-left-link' to="/communities/favorities"><li className={`communities-nav-left-li ${location.pathname === '/communities/favorities' ? 'active' : ''}`}>Избранное</li></Link>
-								<Link className='communities-nav-left-link' to="/communities/my-posts"><li className={`communities-nav-left-li ${location.pathname === '/communities/my-posts' ? 'active' : ''}`}>Мои пуликации</li></Link>
+								<Link className='communities-nav-left-link' to="/communities/my-posts"><li className={`communities-nav-left-li ${location.pathname === '/communities/my-posts' ? 'active' : ''}`}>Мои публикации</li></Link>
+								<Link className='communities-nav-left-link' to="/communities/clubs"><li className={`communities-nav-left-li ${location.pathname === '/communities/clubs' ? 'active' : ''}`}>Клубы</li></Link>
 						</ul>
 					</div>
 					<div className='communities-nav-right-div'>

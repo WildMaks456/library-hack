@@ -60,8 +60,8 @@ export const Thread = () => {
 							<div key={post.id} className="thread">
                     <div className="thread-info">
 												<div className="avatar"></div>
-                        <div className="thread-author">{post.author}</div>
-                        <div className="thread-date">{post.date}</div>
+                        <div className="thread-author">{post.author_email}</div>
+                        <div className="thread-date">{post.created_at}</div>
                     </div>
                     <div className="thread-header">{post.title}</div>
                     <div className="thread-body">{post.content}</div>

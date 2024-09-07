@@ -19,6 +19,7 @@ import CommunitiesFavorities from './components/CommunitiesFavorities';
 import { Thread } from './components/Thread';
 import CommunitiesMain from './components/CommunitiesMain';
 import Library from './components/Library';
+import Clubs from './components/Clubs';
 
 
 const router = createBrowserRouter([
@@ -47,6 +48,7 @@ const router = createBrowserRouter([
       { path: 'books-swap', element: <CommunitiesBooksSwap /> },
       { path: 'favorities', element: <CommunitiesFavorities /> },
       { path: 'my-posts', element: <CommunitiesMyPost /> },
+      { path: 'clubs', element: <Clubs /> },
     ],
 		errorElement: <ErrorPage />,
   },
