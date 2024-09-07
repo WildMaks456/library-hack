@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import logo from '../assets/logo.png'
 
 export default function Header() {
     return (
@@ -7,6 +8,7 @@ export default function Header() {
             <div className="header-container">
                 <div className="logo_nav">
                     <div className="logo">
+                        <img src={logo} alt="Logo" />
                         <h1>ОУНБ</h1>
                     </div>
                     <nav className='nav'>
