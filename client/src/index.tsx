@@ -32,6 +32,10 @@ const router = createBrowserRouter([
     path: "/register",
     element: <Register />,
   },
+	{
+    path: "/communities",
+    element: <Register />,
+  },
 	// {
   //   path: "contacts/:contactId",
   //   element: <App />,
