@@ -27,110 +27,37 @@ export default function Content() {
             author: "Джордж Оруэлл",
             title: "1984",
             imgUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Лев Толстой",
-            title: "Война и мир",
-            imgUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Фёдор Достоевский",
-            title: "Преступление и наказание",
-            imgUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Анна Ахматова",
-            title: "Реквием",
-            imgUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Габриэль Гарсиа Маркес",
-            title: "Сто лет одиночества",
-            imgUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Джордж Оруэлл",
-            title: "1984",
-            imgUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Лев Толстой",
-            title: "Война и мир",
-            imgUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Фёдор Достоевский",
-            title: "Преступление и наказание",
-            imgUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Анна Ахматова",
-            title: "Реквием",
-            imgUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Габриэль Гарсиа Маркес",
-            title: "Сто лет одиночества",
-            imgUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Джордж Оруэлл",
-            title: "1984",
-            imgUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Лев Толстой",
-            title: "Война и мир",
-            imgUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Фёдор Достоевский",
-            title: "Преступление и наказание",
-            imgUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Анна Ахматова",
-            title: "Реквием",
-            imgUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Габриэль Гарсиа Маркес",
-            title: "Сто лет одиночества",
-            imgUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Джордж Оруэлл",
-            title: "1984",
-            imgUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Лев Толстой",
-            title: "Война и мир",
-            imgUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Фёдор Достоевский",
-            title: "Преступление и наказание",
-            imgUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Анна Ахматова",
-            title: "Реквием",
-            imgUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Габриэль Гарсиа Маркес",
-            title: "Сто лет одиночества",
-            imgUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Джордж Оруэлл",
-            title: "1984",
-            imgUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
+        }
     ])
 
     const [topAuthors, setTopAuthors] = useState([
+        {
+            author: "Лев Толстой",
+            title: "Война и мир",
+            imgUrl: "https://via.placeholder.com/150x200/D9D9D9"
+        },
+        {
+            author: "Фёдор Достоевский",
+            title: "Преступление и наказание",
+            imgUrl: "https://via.placeholder.com/150x200/D9D9D9"
+        },
+        {
+            author: "Анна Ахматова",
+            title: "Реквием",
+            imgUrl: "https://via.placeholder.com/150x200/D9D9D9"
+        },
+        {
+            author: "Габриэль Гарсиа Маркес",
+            title: "Сто лет одиночества",
+            imgUrl: "https://via.placeholder.com/150x200/D9D9D9"
+        },
+        {
+            author: "Джордж Оруэлл",
+            title: "1984",
+            imgUrl: "https://via.placeholder.com/150x200/D9D9D9"
+        }
+    ])
+    const [nonFiction, setNonFiction] = useState([
         {
             author: "Лев Толстой",
             title: "Война и мир",
@@ -275,16 +202,16 @@ export default function Content() {
             <div className="content">
                 <h2>Содержание</h2>
                 <ul className="toc">
-                    <li><span>Новости</span><div className="dots"></div><span className="page">01</span></li>
-                    <li><span>Популярные книги</span><div className="dots"></div><span className="page">02</span></li>
-                    <li><span>Лучшие авторы</span><div className="dots"></div><span className="page">03</span></li>
-                    <li><span>Последние поступления</span><div className="dots"></div><span className="page">04</span></li>
-                    <li><span>Нон-фикшен</span><div className="dots"></div><span className="page">05</span></li>
-                    <li><span>Детям</span><div className="dots"></div><span className="page">06</span></li>
+                    <li><a href="#news"><span>Новости</span><div className="dots"></div><span className="page">01</span></a></li>
+                    <li><a href="#popular"><span>Популярные книги</span><div className="dots"></div><span className="page">02</span></a></li>
+                    <li><a href="#top-authors"><span>Лучшие авторы</span><div className="dots"></div><span className="page">03</span></a></li>
+                    <li><a href=""><span>Последние поступления</span><div className="dots"></div><span className="page">04</span></a></li>
+                    <li><a href="#fiction"><span>Нон-фикшен</span><div className="dots"></div><span className="page">05</span></a></li>
+                    <li><a href=""><span>Детям</span><div className="dots"></div><span className="page">06</span></a></li>
                 </ul>
             </div>
             <hr />
-            <div className='news-container'>
+            <div id='news' className='news-container'>
                 <div className="news-card">
                     <h3>HackTheBookshelf (подзаголовок)</h3>
                     <p>Друзья! 12 августа Карагандинская областная универсальная научная библиотека
@@ -312,7 +239,7 @@ export default function Content() {
             </div>
             <hr />
             <div className="books-container">
-                <div className='popular-title'>
+                <div id='popular' className='popular-title'>
                     <div className="popular">
                         <button className="arrow arrow-left" onClick={() => { scrollLeft('.popular-cards') }}>←</button>
                         <div className="popular-cards">
@@ -323,7 +250,8 @@ export default function Content() {
                         <button className="arrow arrow-right" onClick={() => { scrollRight('.popular-cards') }}>→</button>
                     </div>
                 </div>
-                <div className="authors-title">
+                <hr />
+                <div id='top-authors' className="authors-title">
                     <div className="top-authors">
                         <button className="arrow arrow-left" onClick={() => { scrollLeft('.authors-cards') }}>←</button>
                         <div className="authors-cards">
@@ -334,7 +262,19 @@ export default function Content() {
                         <button className="arrow arrow-right" onClick={() => { scrollRight('.authors-cards') }}>→</button>
                     </div>
                 </div>
-                <div className="non-fiction"></div>
+                <hr />
+                <div id='fiction' className="fiction-title">
+                    <div className="non-fiction">
+                        <button className="arrow arrow-left" onClick={() => { scrollLeft('.fiction-cards') }}>←</button>
+                        <div className="fiction-cards">
+                            {nonFiction.map((book, index) => (
+                                <BookItem book={book} key={index} />
+                            ))}
+                        </div>
+                        <button className="arrow arrow-right" onClick={() => { scrollRight('.fiction-cards') }}>→</button>
+                    </div>
+                    <hr />
+                </div>
             </div>
         </>
     );

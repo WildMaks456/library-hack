@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
 import Content from './components/Content';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -10,23 +11,7 @@ function App() {
       <Header />
       <div className='wrapper'>
         <Content />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <h1>Добро пожаловать!</h1>
-        
-
+        <Footer />
       </div>
     </div>
   );

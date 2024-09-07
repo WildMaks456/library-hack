@@ -4,6 +4,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -13,6 +14,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+ 
 }
 
 .wrapper {
@@ -100,9 +102,11 @@ code {
   padding: 0;
 }
 
-.toc li {
+.toc li a {
   display: flex;
   justify-content: space-between;
+  text-decoration: none;
+  color: black;
 }
 
 .dots {
@@ -158,13 +162,13 @@ code {
   line-height: 58.09px;
 }
 
-.popular, .top-authors {
+.popular, .top-authors, .non-fiction {
   overflow: hidden;
   position: relative;
   margin-top: 30px;
 }
 
-.popular-title, .authors-title {
+.popular-title, .authors-title, .fiction-title {
   position: relative;
 }
 
@@ -192,7 +196,19 @@ code {
   color: black;
 }
 
-.authors-cards {
+.fiction-title::after {
+  content: "Нон-фикшен";
+  display: block;
+  position: absolute;
+  top: 110px;
+  left: -140px;
+  font-size: 38px;
+  transform: rotate(-90deg);
+  font-family: Inter;
+  color: black;
+}
+
+.authors-cards, .fiction-cards {
   display: flex;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
@@ -263,6 +279,6 @@ code {
   right: 0;
 }
 
-.popular-cards::-webkit-scrollbar, .authors-cards::-webkit-scrollbar {
+.popular-cards::-webkit-scrollbar, .authors-cards::-webkit-scrollbar, .fiction-cards::-webkit-scrollbar {
   display: none;
 }
