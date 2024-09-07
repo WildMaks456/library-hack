@@ -35,6 +35,16 @@ code {
 
 .header {
   background-color: #F1F1F1;
+  /* display: flex; */
+}
+
+.header img {
+  width: 75px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
 }
 
 .header-container {
@@ -43,7 +53,7 @@ code {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 0;
+  padding: 5px 0;
 }
 
 .nav ul {
@@ -148,3 +158,111 @@ code {
   line-height: 58.09px;
 }
 
+.popular, .top-authors {
+  overflow: hidden;
+  position: relative;
+  margin-top: 30px;
+}
+
+.popular-title, .authors-title {
+  position: relative;
+}
+
+.popular-title::after {
+  content: "Популярные";
+  display: block;
+  position: absolute;
+  top: 100px;
+  left: -135px;
+  font-size: 38px;
+  transform: rotate(-90deg);
+  font-family: Inter;
+  color: black;
+}
+
+.authors-title::after {
+  content: "Лучшие авторы";
+  display: block;
+  position: absolute;
+  top: 123px;
+  left: -167px;
+  font-size: 38px;
+  transform: rotate(-90deg);
+  font-family: Inter;
+  color: black;
+}
+
+.authors-cards {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 10px;
+}
+
+.popular-cards {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 10px;
+}
+
+.popular-card {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  margin-right: 15px;
+  /* Optional: add space between cards */
+  width: 150px;
+}
+
+.popular-card img {
+  width: 100%;
+  /* Adjust size as needed */
+  height: 200px;
+  display: block;
+}
+
+.popular-card p {
+  font-family: Outfit;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25.2px;
+  text-align: left;
+  margin: 0 0 5px 0;
+}
+
+.popular-card h4 {
+  margin-top: 5px;
+  font-family: Outfit;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20.16px;
+  text-align: left;
+  color: #00000099;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  color: black;
+  border: 1px solid black;
+  background-color: transparent;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 1;
+  padding: 10px;
+}
+
+.arrow-left {
+  left: 0;
+}
+
+.arrow-right {
+  right: 0;
+}
+
+.popular-cards::-webkit-scrollbar, .authors-cards::-webkit-scrollbar {
+  display: none;
+}
