@@ -13,7 +13,7 @@ export default function Header() {
                     </div>
                     <nav className='nav'>
                         <ul>
-                            <li><NavLink to={"/main"}>Главное</NavLink></li>
+                            <li><NavLink to={"/"}>Главное</NavLink></li>
                             <li><NavLink to={"/quests"}>Квесты</NavLink></li>
                             <li><NavLink to={"/communities"}>Сообщества</NavLink></li>
                             <li><NavLink to={"/mybooks"}>Мои книги</NavLink></li>
