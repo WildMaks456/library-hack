@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <h1>Добро пожаловать</h1>
+      <h1>Добро пожаловать!</h1>
       <NavLink to="/account">
         <button>Вход</button>
       </NavLink>
