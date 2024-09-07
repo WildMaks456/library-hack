@@ -1,11 +1,12 @@
 import React from 'react'
 
-export default function BookItem(book) {
+export default function BookItem({book, className}) {
+    console.log(book)
     return (
-        <div className="popular-card" >
-            <img src={book.book.imgUrl} alt="" />
-            <h4>{book.book.author}</h4>
-            <p>{book.book.title}</p>
+        <div className={className} >
+            <img src={book.imageUrl} alt="" />
+            <h4>{book.author}</h4>
+            <p>{book.title}</p>
         </div>
     )
 }
