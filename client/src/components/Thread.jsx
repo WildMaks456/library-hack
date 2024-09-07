@@ -1,4 +1,7 @@
 import "../styles/Thread.css"
+import imgLike from '../assets/Group.png'
+import imgDisLike from '../assets/Dislike.png'
+import imgStar from '../assets/star.png'
 
 export const Thread = () => {
     return (
@@ -13,16 +16,16 @@ export const Thread = () => {
 
             <div className="thread-footer">
                 <div className="thread-likes">
-                    <img src="../assets/Group.png" alt=""/>
+                    <img src={imgLike} alt=""/>
                     <span>12</span>
                 </div>
                 <div className="thread-dislikes">
-                    <img src="../assets/Dislike.png" alt=""/>
+                    <img src={imgDisLike} alt=""/>
                     <span>12</span>
                 </div>
                 
                 <div className="thread-star">
-                    <img src="../assets/star.png" alt=""/>
+                    <img src={imgStar} alt=""/>
                 </div>
 
 
