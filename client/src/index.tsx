@@ -12,6 +12,7 @@ import store from './app/store';
 import Account from './components/Account';
 import Login from './components/Login';
 import Register from './components/Register';
+import Communities from './components/Communities';
 
 
 const router = createBrowserRouter([
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
   {
     path: "/register",
     element: <Register />,
+  },
+	{
+    path: "/communities",
+    element: <Communities />,
   },
 	// {
   //   path: "contacts/:contactId",
