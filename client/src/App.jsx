@@ -10,6 +10,20 @@ function App() {
       <Header />
       <div className='wrapper'>
         <Content />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         <h1>Добро пожаловать!</h1>
         <NavLink to="/account">
           <button>Вход</button>
