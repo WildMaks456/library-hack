@@ -21,6 +21,7 @@ import CommunitiesMain from './components/CommunitiesMain';
 import Library from './components/Library';
 import Clubs from './components/Clubs';
 import BookPages from './components/BookPages';
+import PostDetail from './components/PostDetail';
 
 
 const router = createBrowserRouter([
@@ -50,6 +51,7 @@ const router = createBrowserRouter([
       { path: 'favorities', element: <CommunitiesFavorities /> },
       { path: 'my-posts', element: <CommunitiesMyPost /> },
       { path: 'clubs', element: <Clubs /> },
+			{ path: 'post/:id', element: <PostDetail /> },
     ],
 		errorElement: <ErrorPage />,
   },

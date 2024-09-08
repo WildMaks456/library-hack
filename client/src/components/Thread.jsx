@@ -7,6 +7,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
 import { setPosts } from './modalSlice';
+import { NavLink } from 'react-router-dom';
 
 
 export const Thread = () => {
@@ -37,7 +38,9 @@ export const Thread = () => {
                         <div className="thread-author">{post.author_email}</div>
                         <div className="thread-date">{post.created_at}</div>
                     </div>
-                    <div className="thread-header">{post.title}</div>
+										<NavLink to={`/communities/post/${post.id}`}>
+											<div className="thread-header">{post.title}</div>
+										</NavLink>
                     <div className="thread-body">{post.content}</div>
 										<div className="thread-footer">
 										<div className="thread-likes">
