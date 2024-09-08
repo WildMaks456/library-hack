@@ -27,7 +27,8 @@ export default function CreatePostModal({ onClose }) {
 
     return (
         <div className="modal">
-            <h2>Создать новый пост</h2>
+					<div className="modal-content">
+						<h2>Создать новый пост</h2>
             <input
                 type="text"
                 placeholder="Заголовок"
@@ -41,6 +42,7 @@ export default function CreatePostModal({ onClose }) {
             />
             <button onClick={handleCreatePost}>Добавить пост</button>
             <button onClick={onClose}>Закрыть</button>
+					</div>
         </div>
     );
 }

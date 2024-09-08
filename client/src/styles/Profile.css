@@ -60,6 +60,19 @@ font-weight: 400;
 .overall-statistics2 {
 text-decoration: none;
 }
+.overall-statistics3 {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 15px;
+}
+.overall-statistics4 {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	padding-top: 100px;
+}
 
 .chart {
 	width: 325px;
