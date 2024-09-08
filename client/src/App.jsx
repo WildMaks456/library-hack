@@ -7,13 +7,18 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <div className='wrapper'>
-        <Content />
+      <div className="App">
+          <Header/>
+          <div className="start-page">
+              <p>Карагандинская областная
+                  универсальная научная
+                  библиотека им. Н.В. Гоголя</p>
+          </div>
+          <div className='wrapper'>
+              <Content/>
+          </div>
+          <Footer/>
       </div>
-      <Footer />
-    </div>
   );
 }
 

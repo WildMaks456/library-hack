@@ -84,8 +84,20 @@ code {
 .search_user-info {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 50px;
 }
+
+.search-nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  text-decoration: none;
+  color: black;
+}
+
+
 
 .logo_nav {
   display: flex;
@@ -99,6 +111,20 @@ code {
   max-width: 300px;
   margin-bottom: 35px;
 }
+
+
+.start-page {
+  background-image: url('./assets/bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  font-size: 96px;
+  color: white;
+  padding: 200px 200px;
+  font-weight: 700;
+}
+
+
 
 .toc {
   list-style-type: none;
