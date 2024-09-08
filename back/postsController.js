@@ -8,7 +8,7 @@ class postsController {
 					console.log("req.user:", req.user);
 	
 					const { title, text: content } = req.body;
-					const author_id = req.user.id; // Берем ID автора из токена
+					const author_id = req.user.id;
 					if (!title || !content || !author_id) {
 							return res.status(400).json({ message: "Не все данные для поста переданы" });
 					}

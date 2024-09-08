@@ -33,7 +33,7 @@
 }
 .communities-nav-right-div-btn {
 	padding: 17px 25px;
-	background-color: #2055E5;
+	background-color: #5A3FA7;
 	border-radius: 8px;
 	color: #F7F8FA;
 	font-family: Inter;
@@ -44,7 +44,7 @@
 }
 .communities-nav-right-div-btn:hover {
 	cursor: pointer;
-	background-color: #0f49e7;
+	background-color: #4e2fa7;
 }
 .communities-nav-right-div-right {
 	width: 100%;
