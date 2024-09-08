@@ -29,4 +29,44 @@ db.run(`
     }
 });
 
+db.run(`
+	CREATE TABLE IF NOT EXISTS posts (
+			id INTEGER PRIMARY KEY AUTOINCREMENT,
+			title TEXT NOT NULL,
+			content TEXT NOT NULL,
+			created_at TEXT,
+			author_id INTEGER,
+			likes INTEGER DEFAULT 0,
+			dislikes INTEGER DEFAULT 0,
+			comments TEXT DEFAULT '[]',
+			FOREIGN KEY(author_id) REFERENCES users(id)
+	);
+`, (err) => {
+	if (err) {
+			console.error('Ошибка создания таблицы "posts":', err.message);
+	} else {
+			console.log("Таблица 'posts' создана или уже существует.");
+	}
+});
+
+db.run(`
+	CREATE TABLE IF NOT EXISTS swap_books (
+			id INTEGER PRIMARY KEY AUTOINCREMENT,
+			author_id INTEGER,
+			created_at TEXT,
+			image TEXT,
+			book_author TEXT,
+			book_title TEXT,
+			description TEXT,
+			FOREIGN KEY(author_id) REFERENCES users(id)
+	);
+`, (err) => {
+	if (err) {
+			console.error('Ошибка создания таблицы "swap_books":', err.message);
+	} else {
+			console.log("Таблица 'swap_books' создана или уже существует.");
+	}
+});
+
+
 module.exports = db;
