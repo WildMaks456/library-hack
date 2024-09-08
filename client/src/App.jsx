@@ -13,7 +13,7 @@ function App() {
               <p>Карагандинская областная
                   универсальная научная
                   библиотека им. Н.В. Гоголя</p>
-          </div>
+          </div >
           <div className='wrapper'>
               <Content/>
           </div>
