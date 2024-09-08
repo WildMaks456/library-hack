@@ -432,9 +432,10 @@ code {
 }
 
 .books-library {
+	width: 100%;
   display: flex;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 9.5%;
   margin-top: 20px;
 }
 
@@ -908,7 +909,7 @@ code {
 }
 
 .quests-container {
-  margin-top: 30px; 
+  margin-top: 30px;
 }
 
 .quests {
@@ -917,8 +918,128 @@ code {
   gap: 20px;
   margin: auto;
   width: 70%;
+  margin-top: 50px;
+}
+
+.quest {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
 }
 
 .quests h5 {
-  margin-left: 100px;
+  text-align: center;
+  color: #555A65;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.difficulty-quest {
+  display: flex;
+  gap: 20px;
+}
+
+.name-quest {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.difficulty-quest {
+  margin-left: 20px;
+}
+
+.difficulty-quest button {
+  padding: 10px 0;
+  width: 150px;
+  border-radius: 8px;
+  border: 1px solid #DDCBF5;
+  color: #17051F;
+  opacity: 0px;
+  cursor: pointer;
+}
+
+/* styles.css */
+.button-easy {
+  background-color: #DDCBF599; /* Легкий уровень */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.button-medium {
+  background-color: #BD9DE799; /* Средний уровень */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.button-hard {
+  background-color: #8A6DB2;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+
+
+.quiz {
+  width: 80%;
+  margin: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 50px;
+}
+
+.quiz h2 {
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 32px;
+}
+
+.quiz span {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #555A65;
+}
+
+.question p {
+  font-weight: bold;
+}
+
+.quiz label {
+  display: block;
+  margin-top: 10px;
+}
+
+.quiz input[type="radio"] {
+  margin-right: 10px;
+}
+
+.quiz button {
+  margin-top: 20px;
+}
+
+.title-quiz {
+  display: flex;
+  align-items: start;
+}
+
+.title-quiz img {
+  width: 50px;
+}
+
+.question {
+  border-left: 5px solid #5A3FA7;
+  padding-left: 10px;
+  margin-left: 50px; 
 }

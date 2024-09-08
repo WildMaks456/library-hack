@@ -69,23 +69,30 @@ db.run(`
 });
 
 db.run(`
-	CREATE TABLE IF NOT EXISTS swap_books (
-		id INTEGER PRIMARY KEY AUTOINCREMENT,
-		author_id INTEGER,
-		created_at TEXT,
-		image TEXT,
-		book_author TEXT,
-		book_title TEXT,
-		description TEXT,
-		FOREIGN KEY(author_id) REFERENCES users(id)
-	);
- `, (err) => {
+        CREATE TABLE IF NOT EXISTS books (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            author TEXT NOT NULL,
+            title TEXT NOT NULL,
+            description TEXT,
+            ageRestrictions INTEGER,
+            copyright TEXT,
+            publisher TEXT,
+            series TEXT,
+            imgUrl TEXT,
+            rating REAL,
+            genres TEXT
+        )
+    `, (err) => {
 	if (err) {
-		console.error('Ошибка создания таблицы "swap_books":', err.message);
+		console.error('Ошибка при создании таблицы:', err.message);
 	} else {
-		console.log("Таблица 'swap_books' создана или уже существует.");
+		console.log('Таблица books успешно создана или уже существует.');
 	}
- });
+});
+
+
+
+
 
 
 module.exports = db;

@@ -22,6 +22,7 @@ import Library from './components/Library';
 import Clubs from './components/Clubs';
 import Quests from './components/Quests';
 import PostDetail from './components/PostDetail';
+import QuestComponent from './components/QuestComponent';
 
 
 const router = createBrowserRouter([
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
 	{
     path: "/quests",
     element: <Quests />,
+  },
+	{
+    path: "/question",
+    element: <QuestComponent />,
   },
 ]);
 

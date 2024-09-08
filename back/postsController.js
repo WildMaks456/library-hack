@@ -83,33 +83,43 @@ class postsController {
         }
     }
 
-    // Добавление комментария
-    async addComment(req, res) {
-        try {
-            const { post_id, comment } = req.body;
-            db.get(`SELECT comments FROM posts WHERE id = ?`, [post_id], (err, row) => {
-                if (err) {
-                    return res.status(500).json({ error: err.message });
-                }
-                let comments = JSON.parse(row.comments || "[]");
-                comments.push(comment);
+		// добавление комма
+		async addComment(req, res) {
+			try {
+					const { postId, comment } = req.body;
+					const authorId = req.user.id;
+	
+					if (!postId || !comment) {
+							return res.status(400).json({ message: 'Не все данные для комментария переданы' });
+					}
+	
+					// Получаем пост
+					db.get(`SELECT comments FROM posts WHERE id = ?`, [postId], (err, row) => {
+							if (err) {
+									return res.status(500).json({ error: err.message });
+							}
+	
+							let comments = JSON.parse(row.comments || '[]');
+							comments.push({ author_id: authorId, text: comment, createdAt: new Date().toLocaleDateString('ru-RU') });
+	
+							db.run(
+									`UPDATE posts SET comments = ? WHERE id = ?`,
+									[JSON.stringify(comments), postId],
+									function (err) {
+											if (err) {
+													return res.status(500).json({ error: err.message });
+											}
+											res.json({ author_id: authorId, text: comment, createdAt: new Date().toLocaleDateString('ru-RU') });
+									}
+							);
+					});
+			} catch (e) {
+					console.error(e);
+					res.status(500).json({ message: 'Ошибка добавления комментария' });
+			}
+	}
+	
 
-                db.run(
-                    `UPDATE posts SET comments = ? WHERE id = ?`,
-                    [JSON.stringify(comments), post_id],
-                    function (err) {
-                        if (err) {
-                            return res.status(500).json({ error: err.message });
-                        }
-                        res.json({ message: "Комментарий добавлен" });
-                    }
-                );
-            });
-        } catch (e) {
-            console.log(e);
-            res.status(500).json({ message: "Ошибка добавления комментария" });
-        }
-    }
 
     // Добавление книги для обмена
     async addSwapBook(req, res) {

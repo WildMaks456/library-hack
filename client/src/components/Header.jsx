@@ -16,7 +16,6 @@ export default function Header() {
                             <li><NavLink to={"/"}>Главное</NavLink></li>
                             <li><NavLink to={"/quests"}>Квесты</NavLink></li>
                             <li><NavLink to={"/communities"}>Сообщества</NavLink></li>
-                            <li><NavLink to={"/mybooks"}>Мои книги</NavLink></li>
                         </ul>
                     </nav>
                 </div>
