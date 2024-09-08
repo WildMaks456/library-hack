@@ -1,95 +1,105 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    padding: 0 100px;
+	display: flex;
+	flex-direction: column;
+	padding: 0 100px;
 }
 
 .profile {
-    display: flex;
-    justify-content: center;
-    gap: 200px;
+	display: flex;
+	justify-content: center;
+	gap: 200px;
 }
 
 .profile-info {
-    display: flex;
-    gap: 40px;
+	display: flex;
+	gap: 40px;
 }
 
 .profile-photo {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background-color: lightgray;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	background-color: lightgray;
 }
 
 .profile-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
 }
 
 .profile-form input {
-    width: 320px;
-    padding: 15px;
-    border-top: 0;
-    border-right: 0;
-    border-left: 0;
-    border-bottom: 1px solid lightgray;
+	width: 320px;
+	padding: 15px;
+	border-top: 0;
+	border-right: 0;
+	border-left: 0;
+	border-bottom: 1px solid lightgray;
 }
 
 .profile-form label {
-    padding: 0 15px;
+	padding: 0 15px;
 }
 
 .overall-statistics {
-    background-color: #f3f3f3;
-    width: 40%;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-    border-radius: 10px;
+	background-color: #8F8EC96E;
+	width: 40%;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
+	border-radius: 10px;
+}
+
+.overall-statistics h4 {
+font-family: Inter;
+font-size: 20px;
+font-weight: 400;
+}
+
+.overall-statistics2 {
+text-decoration: none;
 }
 
 .chart {
-    width: 325px;
-    background-color: white;
+	width: 325px;
+	background-color: white;
 }
 
 .my-shelf {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 
 }
 .books-cards {
-    width: 100%;
-    height: 500px;
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-    overflow-y: auto;
-    justify-content: center;
-    border: 1px solid #cbcbcb;
-    border-radius: 5px;
+	width: 100%;
+	height: 500px;
+	display: flex;
+	gap: 15px;
+	flex-wrap: wrap;
+	overflow-y: auto;
+	justify-content: center;
+	border: 1px solid #cbcbcb;
+	border-radius: 5px;
 }
 
 .book-card {
-    width: 20%;
+	width: 20%;
 }
 
 .row {
-	display: flex;
-	justify-content: space-between;
+display: flex;
+justify-content: space-between;
 }
 
 .row span {
-	font-family: Inter;
-	font-size: 16px;
-	font-weight: 400;
-	color: #8F8EC999;
+font-family: Inter;
+font-size: 16px;
+font-weight: 400;
+color: #8F8EC999;
 }
 .row span:hover {
-	cursor: pointer;
-	text-decoration: underline;
+cursor: pointer;
+text-decoration: underline;
 }

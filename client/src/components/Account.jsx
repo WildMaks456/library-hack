@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { Profile } from './Profile';
 import { useDispatch, useSelector } from 'react-redux';
 import { setIsValidToken } from './modalSlice';
+import Header from "./Header"
 
 export default function Account() {
     const dispatch = useDispatch();
@@ -25,9 +26,10 @@ export default function Account() {
                 <Profile />
             ) : (
                 <>
-                    <p>
-                        У вас уже есть аккаунт? <NavLink to="/login">Аккаунт</NavLink> или хотите <NavLink to="/register">зарегаться</NavLink>?
-                    </p>
+										<Header/>
+										<div className="overall-statistics">
+												<h4>У Вас уже есть <NavLink className={"overall-statistics2"} to="/login">aккаунт</NavLink>? или Вы хотите <NavLink className={"overall-statistics2"} to="/register">зарегистрироваться</NavLink>?</h4>
+										</div>
                 </>
             )}
         </div>
