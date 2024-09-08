@@ -5,6 +5,7 @@ import imgLike from '../assets/Group.png';
 import imgDisLike from '../assets/Dislike.png';
 import imgStar from '../assets/star.png';
 import imgComments from '../assets/Comments.png';
+import "../styles/postDetail.css"
 
 export default function PostDetail() {
     const { id } = useParams();
@@ -27,8 +28,8 @@ export default function PostDetail() {
     }
 
     return (
-			
-        <div className="thread">
+			<div className="post-detail-dop">
+				<div className="thread">
             <div className="thread-info">
                 <div className="avatar"></div>
                 <div className="thread-author">{post.author_email}</div>
@@ -54,5 +55,7 @@ export default function PostDetail() {
                 </div>
             </div>
         </div>
+			</div>
+        
     );
 }
