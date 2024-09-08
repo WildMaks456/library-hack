@@ -7,7 +7,7 @@ import imgStar from '../assets/star.png';
 import imgComments from '../assets/Comments.png';
 
 export default function PostDetail() {
-    const { id } = useParams(); // Get the post ID from the URL
+    const { id } = useParams();
     const [post, setPost] = useState(null);
 
     useEffect(() => {
@@ -27,6 +27,7 @@ export default function PostDetail() {
     }
 
     return (
+			
         <div className="thread">
             <div className="thread-info">
                 <div className="avatar"></div>
