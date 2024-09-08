@@ -40,8 +40,8 @@ export default function CreatePostModal({ onClose }) {
                 value={text}
                 onChange={(e) => setText(e.target.value)}
             />
-            <button onClick={handleCreatePost}>Добавить пост</button>
-            <button onClick={onClose}>Закрыть</button>
+            <button className='communities-nav-right-div-btn' onClick={handleCreatePost}>Добавить пост</button>
+            <button className='communities-nav-right-div-btn' onClick={onClose}>Закрыть</button>
 					</div>
         </div>
     );
