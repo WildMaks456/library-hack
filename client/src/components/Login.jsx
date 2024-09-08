@@ -1,8 +1,20 @@
-import React, {useEffect, useState} from 'react';
-import axios from 'axios';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as yup from "yup";
-import {Form, Formik, useField} from "formik";
+import { Formik, Form, useField } from "formik";
+import axios from 'axios';
+
+const MyTextInput = ({ label, ...props }) => {
+  const [field, meta] = useField(props);
+  return (
+    <div className="form-group">
+      <input className="text-input" {...field} {...props} />
+      {meta.touched && meta.error ? (
+        <div className="error">{meta.error}</div>
+      ) : null}
+    </div>
+  );
+};
 
 export default function Login() {
   const navigate = useNavigate();
@@ -17,65 +29,62 @@ export default function Login() {
     password: ''
   };
 
-  const handleLogin = async (values, { setSubmitting}) => {
+  const handleLogin = async (values, { setSubmitting }) => {
     try {
-			console.log(values);
+      console.log(values);
       const response = await axios.post('http://localhost:5000/auth/login', values);
-			
       localStorage.setItem('token', response.data.token);
       navigate('/account');
     } catch (error) {
       console.error('Login error:', error);
       alert('Ошибка входа');
+    } finally {
+      setSubmitting(false);
     }
   };
 
-  const MyTextInput = ({ label, ...props }) => {
-    const [field, meta] = useField(props);
-    return (
-        <>
-          <input className="text-input" {...field} {...props} />
-          {meta.touched && meta.error ? (
-              <div className="error">{meta.error}</div>
-          ) : null}
-        </>
-    );
-  };
-
-
-
   return (
-    <div>
-      <h2>Вход</h2>
-      <Formik
+    <div className="login-wrapper">
+
+      <div className="login-container">
+        <div className="login-header">
+          <h2>Вход</h2>
+          <a className="close-btn" href='/account' >&times;</a>
+        </div>
+        <div className="register-link">
+          Еще нет аккаунта? <a href="/register">Зарегистрироваться</a>
+        </div>
+        <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
           onSubmit={handleLogin}
-      >
+        >
+          {({ isSubmitting }) => (
+            <Form>
+              <MyTextInput
+                name="email"
+                type="email"
+                placeholder="email"
+              />
+              <MyTextInput
+                name="password"
+                type="password"
+                placeholder="пароль"
+              />
+              <div className="form-footer">
+                <label>
+                  <input type="checkbox" /> Запомнить меня
+                </label>
+                <a href="#">Забыли пароль?</a>
+              </div>
+              <button type="submit" className="submit-btn" disabled={isSubmitting}>
+                {isSubmitting ? 'Вход...' : 'Войти'}
+              </button>
+            </Form>
+          )}
+        </Formik>
+      </div>
 
-        {formik => (
-            <>
-              <Form className='form-for-reg'>
-                <div className="main-block-left2" id='for-mainblockleft2'>
-                  <div className="form">
-                    <label className="lbl-for-reg" htmlFor="inp2">Email</label>
-                    <MyTextInput
-                        name="email"
-                        id="inp2"
-                        type="email"
-                    />
-                    <label className="lbl-for-reg" htmlFor="inp4">Введите пароль</label>
-                    <MyTextInput
-                        name="password"
-                        id="inp4"
-                        type="password"
-                    />
-                  </div>
-      						<button type="submit">Войти</button>
-                </div>
-              </Form>
-            </>)}
-      </Formik>
     </div>
   );
 }

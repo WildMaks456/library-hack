@@ -20,6 +20,7 @@ import { Thread } from './components/Thread';
 import CommunitiesMain from './components/CommunitiesMain';
 import Library from './components/Library';
 import Clubs from './components/Clubs';
+import BookPages from './components/BookPages';
 
 
 const router = createBrowserRouter([
@@ -55,6 +56,10 @@ const router = createBrowserRouter([
 	{
     path: "/library",
     element: <Library />,
+  },
+	{
+    path: "/quests",
+    element: <BookPages />,
   },
 ]);
 
