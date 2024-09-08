@@ -15,7 +15,7 @@ export const AdminPanel = () => {
 
     const addBook = async (newBook) => {
         try {
-            const res = await axios.post("http://localhost:5001/books/add-book", newBook)
+            const res = await axios.post("http://localhost:5000/books/add-book", newBook)
             getBooks()
             console.log(res)
             return res
@@ -26,7 +26,7 @@ export const AdminPanel = () => {
 
     const getBooks = async () => {
         try {
-            const res = await axios.get("http://localhost:5001/books/get-all-books");
+            const res = await axios.get("http://localhost:5000/books/get-all-books");
             console.log(res)
             setBooks(res.data.books)
             console.log(books)
@@ -39,7 +39,7 @@ export const AdminPanel = () => {
 
     const getBookById = async () => {
         try {
-            const res = await axios.get(`http://localhost:5001/books/get-book/2`)
+            const res = await axios.get(`http://localhost:5000/books/get-book/2`)
             console.log(res)
             return res
         } catch (e) {
@@ -49,7 +49,7 @@ export const AdminPanel = () => {
 
     const deleteBook = async (id) => {
         try {
-            const res = await axios.delete(`http://localhost:5001/books/delete-book/${id}`)
+            const res = await axios.delete(`http://localhost:5000/books/delete-book/${id}`)
             console.log(res)
             getBooks()
             return res

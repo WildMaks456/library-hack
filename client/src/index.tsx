@@ -23,6 +23,8 @@ import Clubs from './components/Clubs';
 import Quests from './components/Quests';
 import PostDetail from './components/PostDetail';
 import QuestComponent from './components/QuestComponent';
+import BookPages from './components/BookPages';
+import { AdminPanel } from './components/AdminPanel';
 
 
 const router = createBrowserRouter([
@@ -67,6 +69,14 @@ const router = createBrowserRouter([
 	{
     path: "/question",
     element: <QuestComponent />,
+  },
+	{
+    path: "/book/:id",
+    element: <BookPages />,
+  },
+	{
+    path: "/admin",
+    element: <AdminPanel />,
   },
 ]);
 

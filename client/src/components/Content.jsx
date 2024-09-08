@@ -1,190 +1,19 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import BookItem from './BookItem';
+import axios from "axios";
 
 export default function Content() {
-    const [books, setBooks] = useState([
-        {
-            author: "Лев Толстой",
-            title: "Война и мир",
-            imageUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Фёдор Достоевский",
-            title: "Преступление и наказание",
-            imageUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Анна Ахматова",
-            title: "Реквием",
-            imageUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Габриэль Гарсиа Маркес",
-            title: "Сто лет одиночества",
-            imageUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Джордж Оруэлл",
-            title: "1984",
-            imageUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        }
-    ])
+    const [books, setBooks] = useState([])
 
-    const [topAuthors, setTopAuthors] = useState([
-        {
-            author: "Лев Толстой",
-            title: "Война и мир",
-            imageUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Фёдор Достоевский",
-            title: "Преступление и наказание",
-            imageUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Анна Ахматова",
-            title: "Реквием",
-            imageUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Габриэль Гарсиа Маркес",
-            title: "Сто лет одиночества",
-            imageUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Джордж Оруэлл",
-            title: "1984",
-            imageUrl: "https://via.placeholder.com/150x200/D9D9D9"
+    const getBooks = async () => {
+        try {
+            const res = await axios.get("http://localhost:5000/books/get-all-books");
+            setBooks(res.data.books)
+            return res
+        } catch (e) {
+            console.error(e)
         }
-    ])
-    const [nonFiction, setNonFiction] = useState([
-        {
-            author: "Лев Толстой",
-            title: "Война и мир",
-            imageUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Фёдор Достоевский",
-            title: "Преступление и наказание",
-            imageUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Анна Ахматова",
-            title: "Реквием",
-            imageUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Габриэль Гарсиа Маркес",
-            title: "Сто лет одиночества",
-            imageUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Джордж Оруэлл",
-            title: "1984",
-            imageUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Лев Толстой",
-            title: "Война и мир",
-            imageUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Фёдор Достоевский",
-            title: "Преступление и наказание",
-            imageUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Анна Ахматова",
-            title: "Реквием",
-            imageUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Габриэль Гарсиа Маркес",
-            title: "Сто лет одиночества",
-            imageUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Джордж Оруэлл",
-            title: "1984",
-            imageUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Лев Толстой",
-            title: "Война и мир",
-            imageUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Фёдор Достоевский",
-            title: "Преступление и наказание",
-            imageUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Анна Ахматова",
-            title: "Реквием",
-            imageUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Габриэль Гарсиа Маркес",
-            title: "Сто лет одиночества",
-            imageUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Джордж Оруэлл",
-            title: "1984",
-            imageUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Лев Толстой",
-            title: "Война и мир",
-            imageUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Фёдор Достоевский",
-            title: "Преступление и наказание",
-            imageUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Анна Ахматова",
-            title: "Реквием",
-            imageUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Габриэль Гарсиа Маркес",
-            title: "Сто лет одиночества",
-            imageUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Джордж Оруэлл",
-            title: "1984",
-            imageUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Лев Толстой",
-            title: "Война и мир",
-            imageUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Фёдор Достоевский",
-            title: "Преступление и наказание",
-            imageUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Анна Ахматова",
-            title: "Реквием",
-            imageUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Габриэль Гарсиа Маркес",
-            title: "Сто лет одиночества",
-            imageUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-        {
-            author: "Джордж Оруэлл",
-            title: "1984",
-            imageUrl: "https://via.placeholder.com/150x200/D9D9D9"
-        },
-    ])
-
+    }
 
     const scrollLeft = (type) => {
         const container = document.querySelector(type);
@@ -196,6 +25,10 @@ export default function Content() {
         container.scrollBy({ left: 300, behavior: 'smooth' });
     };
 
+
+    useEffect(() => {
+        getBooks();
+    }, []);
 
     return (
         <>
@@ -255,7 +88,7 @@ export default function Content() {
                     <div className="top-authors">
                         <button className="arrow arrow-left" onClick={() => { scrollLeft('.authors-cards') }}>←</button>
                         <div className="authors-cards">
-                            {topAuthors.map((book, index) => (
+                            {books.map((book, index) => (
                                 <BookItem book={book} key={index} className={"popular-card"} />
                             ))}
                         </div>
@@ -267,7 +100,7 @@ export default function Content() {
                     <div className="non-fiction">
                         <button className="arrow arrow-left" onClick={() => { scrollLeft('.fiction-cards') }}>←</button>
                         <div className="fiction-cards">
-                            {nonFiction.map((book, index) => (
+                            {books.map((book, index) => (
                                 <BookItem book={book} key={index} className={"popular-card"} />
                             ))}
                         </div>

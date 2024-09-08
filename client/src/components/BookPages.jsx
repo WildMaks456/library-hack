@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import Header from './Header';
 import Footer from './Footer';
 import likeIco from '../assets/like.png';
@@ -6,24 +7,31 @@ import plusIco from '../assets/iconoir_plus.png';
 import flagIco from '../assets/flag.png';
 import starsIco from '../assets/star-raiting.png';
 import starFilledIco from '../assets/star-filled.png';
+import { useParams } from 'react-router-dom';
 
 export default function BookPages() {
+    const { id } = useParams();
+    const [book, setBook] = useState(null);
     const [liked, setLiked] = useState(false);
     const [reading, setReading] = useState(false);
     const [read, setRead] = useState(false);
 
-    const book = {
-        id: 1,
-        author: "Джин Вулф",
-        title: "Меч и Цитадель",
-        description: "«Меч и Цитадель» — вторая половина прославленной магической тетралогии «Книги Нового Солнца». «Меч ликтора» Севериан, ставший ликтором города Тракса, снова нарушает свой долг палача и устраивает побег женщине, которую должен был убить. Он вынужден бежать на север Содружества, в горы, преследуемый стражей Тракса и чудовищами, насылаемыми его старыми врагами. На севере полыхает война: войска Автарха сражаются с армией асциан. «Цитадель Автарха» История Севериана близится к финалу. Он откроет источник сил Когтя Миротворца и познает природу Автарха.Севериан вернется в Несс, в Цитадель, к своим учителям, но уже в новом качестве.",
-        ageRestrictions: 12,
-        copyright: "Издательство ЭКСМО",
-        publisher: "fanzon",
-        series: "Книга Нового Солнца",
-        imgUrl: "https://avatars.mds.yandex.net/get-entity_search/7980340/612537180/S600xU",
-        rating: 3,
-    };
+    useEffect(() => {
+        const fetchBook = async () => {
+            try {
+                const response = await axios.get(`http://localhost:5000/books/get-book/${id}`);
+                setBook(response.data);
+            } catch (error) {
+                console.error('Ошибка при получении данных о книге:', error);
+            }
+        };
+
+        fetchBook();
+    }, [id]);
+
+    if (!book) {
+        return <p>Загрузка...</p>; // Или другой индикатор загрузки
+    }
 
     const totalStars = 5;
     const filledStars = Math.round(book.rating);

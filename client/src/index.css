@@ -272,6 +272,7 @@ code {
   line-height: 25.2px;
   text-align: left;
   margin: 0 0 5px 0;
+	color: #000000;
 }
 
 .popular-card h4 {
@@ -319,6 +320,7 @@ code {
   position: absolute;
   width: 100%;
   bottom: 0;
+	z-index: -1;
 }
 
 .footer-container {
@@ -618,9 +620,10 @@ code {
 .form-footer {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
   margin-top: 15px;
   margin-bottom: 15px;
+	flex-direction: column;
 }
 
 .submit-btn {
@@ -1041,5 +1044,33 @@ code {
 .question {
   border-left: 5px solid #5A3FA7;
   padding-left: 10px;
-  margin-left: 50px; 
+}
+
+
+.add-comment input {
+  border-radius: 8px;
+  border: 1px solid #D7DAE2;
+  background-color: white;
+  padding: 10px;
+  width: 300px;
+}
+
+.add-comment button {
+  background-color: #5A3FA7;
+  color: white;
+  border-radius: 8px;
+  padding: 10px;
+  border: none;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.comments-section ul {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.comments-section li {
+  list-style: none;
 }

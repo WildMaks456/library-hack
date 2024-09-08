@@ -4,6 +4,7 @@ import { useLocation, Link, Navigate, Outlet } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setModels } from './modalSlice';
 import Header from './Header';
+import Footer from './Footer';
 import "../styles/Communities.css"
 
 export default function Communities() {
@@ -29,7 +30,7 @@ export default function Communities() {
 					</div>
 				</div>
 			</div>
-			
+			<Footer />
 		</>
 	)
 }

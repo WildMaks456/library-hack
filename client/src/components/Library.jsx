@@ -4,6 +4,7 @@ import Footer from './Footer';
 import GenresFilter from "./GenresFilter";
 import BookItem from "./BookItem";
 import axios from "axios";
+import { NavLink } from "react-router-dom";
 
 export default function Library() {
 	const [searchQuery, setSearchQuery] = useState("");
@@ -69,7 +70,9 @@ export default function Library() {
 					<div className="books-library">
 						{paginatedBooks.length > 0 ? (
 							paginatedBooks.map((book, index) => (
-								<BookItem book={book} key={index} className={"popular-card"} />
+								<NavLink className="communities-nav-left-link" to={"/book/"+book.id}>
+									<BookItem book={book} key={index} className={"popular-card"} />
+								</NavLink>
 							))
 						) : (
 							<p>Нет книг</p>
