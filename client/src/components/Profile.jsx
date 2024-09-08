@@ -1,7 +1,11 @@
 import "../styles/Profile.css"
 import BookItem from "./BookItem";
+import { useDispatch, useSelector } from 'react-redux';
+import { setIsValidToken } from './modalSlice';
+import Header from "./Header"
 
 export const Profile = () => {
+	const dispatch = useDispatch();
     const books  = [
         {
             imageUrl: "https://via.placeholder.com/150/0000FF/FFFFFF?text=1984",
@@ -78,7 +82,14 @@ export const Profile = () => {
         },
     ];
 
+		const exit = () => {
+			localStorage.removeItem("token")
+			dispatch(setIsValidToken(false));
+		}
+
     return (
+			<>
+				<Header />
         <div className="container">
             <div className="profile">
                 <div className="profile-info">
@@ -90,6 +101,10 @@ export const Profile = () => {
                         <input type="text" placeholder="example@gmail.com"/>
                         <label htmlFor="">Номер телефона</label>
                         <input type="text" placeholder="+777777777"/>
+												<div className="row">
+													<span>Редактировать</span>
+													<span onClick={exit}>Выйти</span>
+												</div>
                     </div>
                 </div>
 
@@ -118,5 +133,7 @@ export const Profile = () => {
                 </div>
             </div>
         </div>
+			
+			</>
     );
 };

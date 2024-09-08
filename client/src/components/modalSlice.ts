@@ -3,16 +3,15 @@ import { createSlice } from '@reduxjs/toolkit'
 export const modalSlice = createSlice({
   name: 'modal',
   initialState: {
-    value: "",
+    isValidToken: false,
   },
   reducers: {
-    setImage: (state, action) => {
-      state.value = action.payload
-			console.log(state.value);
+    setIsValidToken: (state, action) => {
+      state.isValidToken = action.payload;
     },
   },
 })
 
-export const { setImage } = modalSlice.actions
+export const { setIsValidToken } = modalSlice.actions
 
 export default modalSlice.reducer

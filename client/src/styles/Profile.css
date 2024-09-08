@@ -77,3 +77,19 @@
 .book-card {
     width: 20%;
 }
+
+.row {
+	display: flex;
+	justify-content: space-between;
+}
+
+.row span {
+	font-family: Inter;
+	font-size: 16px;
+	font-weight: 400;
+	color: #8F8EC999;
+}
+.row span:hover {
+	cursor: pointer;
+	text-decoration: underline;
+}
